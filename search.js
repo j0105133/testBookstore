@@ -1,7 +1,7 @@
 async function searchBooks() {
     const query = document.getElementById('query').value;
     const apiKey = 'ttbj01022761248001';
-    const url = `http://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=${apiKey}
+    const url = `https://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=${apiKey}
     &Query=${encodeURIComponent(query)}&QueryType=Title&MaxResults=10
     &start=1&SearchTarget=Book&output=JS&Version=20131101`;
 
