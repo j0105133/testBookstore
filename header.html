@@ -1,0 +1,17 @@
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>  
+<div class="header__event"></div>        
+    <div class="header__container wrap">            
+        <h1><a href="/">Noona<span>Book</span>Store</a></h1> 
+        <div class="search" id="searchForm" >
+            <input class="search__input" type="text" id="searchQuery" placeholder="검색어를 입력하세요">
+            <button onclick="redirectToSearch()" class="search__button" title="검색"></button>
+            <script src="/JS/search.js"></script>
+        </div>
+    </div>
+</div>  
+<script>
+function redirectToSearch() { 
+    const query = document.getElementById('searchQuery').value;
+    window.location.href = `/search.html?query=${encodeURIComponent(query)}`;
+}
+</script>

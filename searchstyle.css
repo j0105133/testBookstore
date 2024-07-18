@@ -22,27 +22,89 @@ button {
 #results {
     margin: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .book {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 10px 20px; /* 위아래 간격을 반으로 줄임 */
     border: 1px solid #ddd;
-    padding: 10px;
-    width: 200px;
-}     
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
 
 .book img {
-    max-width: 150px;
-    max-height: 200px;
-    margin-bottom: 10px;
+    width: 200px; /* 고정된 너비 */
+    height: 300px; /* 고정된 높이 */
+    margin-right: 20px;
+    object-fit: cover; /* 이미지가 고정된 크기에 맞게 조정됨 */
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-left: 20px; /* 글을 왼쪽으로 옮기기 위해 여백 추가 */
 }
 
 .book h3 {
-    font-size: 16px;
-    text-align: center;
+    font-size: 18px;
+    margin: 0;
+}
+
+.book p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.book:hover {
+    border-color: #007bff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.pagination button.active {
+    background-color: #0056b3;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+/* 반응형 이미지 크기 조정 */
+@media (max-width: 768px) {
+    .book img {
+        width: 150px; /* 작은 화면에서는 이미지 크기를 줄임 */
+        height: 225px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book img {
+        width: 120px; /* 더 작은 화면에서는 이미지 크기를 더 줄임 */
+        height: 180px;
+    }
 }
